@@ -1,0 +1,11 @@
+﻿Risk Name,Deployment,Probability,Risk Flag,Risk Score,Severity
+Customs Clearance Delay,Flipkart Robotics Rollout — Kolkata (https://www.notion.so/Flipkart-Robotics-Rollout-Kolkata-33432c32de1380bb9d3bef0cc293609d?pvs=21),High,Yes,15,Critical
+Vendor Manufacturing Delay,Flipkart Robotics Rollout — Kolkata (https://www.notion.so/Flipkart-Robotics-Rollout-Kolkata-33432c32de1380bb9d3bef0cc293609d?pvs=21),High,Yes,12,High
+Power Infrastructure Instability,Warehouse Deployment — Bangalore (https://www.notion.so/Warehouse-Deployment-Bangalore-33432c32de1380768618c70323f8685d?pvs=21),Medium,No,4,Medium
+Sensor Calibration Failure,Warehouse Deployment — Bangalore (https://www.notion.so/Warehouse-Deployment-Bangalore-33432c32de1380768618c70323f8685d?pvs=21),Medium,No,8,High
+Budget Approval Delay,Amazon Sortation Setup — Hyderabad (https://www.notion.so/Amazon-Sortation-Setup-Hyderabad-33432c32de1380c58325e4c045410886?pvs=21),High,No,6,Medium
+Vendor Dropout Risk,BigBasket Fulfillment Automation — Chennai (https://www.notion.so/BigBasket-Fulfillment-Automation-Chennai-33432c32de1380ec8e86e717d8166957?pvs=21),Medium,No,8,High
+Civil Work Delay,Blinkit Micro-Warehouse Setup — Delhi (https://www.notion.so/Blinkit-Micro-Warehouse-Setup-Delhi-33432c32de138096b6e3e3ceb123068b?pvs=21),High,Yes,15,Critical
+Lease Agreement Issues,Blinkit Micro-Warehouse Setup — Delhi (https://www.notion.so/Blinkit-Micro-Warehouse-Setup-Delhi-33432c32de138096b6e3e3ceb123068b?pvs=21),Medium,No,8,High
+Workforce Shortage,BigBasket Fulfillment Automation — Chennai (https://www.notion.so/BigBasket-Fulfillment-Automation-Chennai-33432c32de1380ec8e86e717d8166957?pvs=21),Medium,No,4,Medium
+Integration Failure Risk,Warehouse Deployment — Bangalore (https://www.notion.so/Warehouse-Deployment-Bangalore-33432c32de1380768618c70323f8685d?pvs=21),Low,No,4,High
