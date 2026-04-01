@@ -34,7 +34,7 @@ def build_task_graph(tasks: pd.DataFrame) -> nx.DiGraph:
                 dep = dep.strip()
 
                 if dep:
-                    G.add_node(dep)  # ensure exists
+                    G.add_node(dep)  
                     G.add_edge(dep, task)
 
     return G
@@ -78,14 +78,12 @@ def compute_critical_path(G: nx.DiGraph):
     Compute longest path based on delay weight
     """
 
-    # Assign weights (delay)
     for node in G.nodes:
         delay = G.nodes[node].get("delay", 0)
         if pd.isna(delay):
             delay = 0
         G.nodes[node]["weight"] = delay
 
-    # Convert node weights → edge weights
     for u, v in G.edges:
         G[u][v]["weight"] = G.nodes[v]["weight"]
 
