@@ -15,18 +15,12 @@ from src.graph import (
 from src.insights import generate_insights, generate_recommendations
 
 
-# ==============================
-# PAGE CONFIG
-# ==============================
 st.set_page_config(page_title="NexusOps", layout="wide")
 
 st.title("🚀 NexusOps")
 st.caption("Operations Intelligence Dashboard")
 
 
-# ==============================
-# LOAD DATA
-# ==============================
 deployments, tasks, resources, risks = load_data()
 
 tasks = compute_task_metrics(tasks)
@@ -43,9 +37,6 @@ insights = generate_insights(deployment_metrics, top_bottlenecks, critical_path)
 recommendations = generate_recommendations(top_bottlenecks, deployment_metrics)
 
 
-# ==============================
-# KPI STRIP
-# ==============================
 st.subheader("📌 System Overview")
 
 c1, c2, c3, c4 = st.columns(4)
@@ -56,9 +47,6 @@ c3.metric("Tasks", len(tasks))
 c4.metric("Delayed", int(tasks["is_delayed"].sum()))
 
 
-# ==============================
-# FILTER
-# ==============================
 st.subheader("🎛️ Deployment Focus")
 
 selected = st.selectbox(
@@ -74,9 +62,6 @@ else:
     filtered = deployment_metrics
 
 
-# ==============================
-# DEPLOYMENTS (CLEAN CARDS)
-# ==============================
 st.subheader("📊 Deployments")
 
 
@@ -107,9 +92,6 @@ for _, row in filtered.iterrows():
         st.progress(row["health_score"] / 100)
 
 
-# ==============================
-# BOTTLENECKS + CRITICAL PATH
-# ==============================
 col1, col2 = st.columns(2)
 
 with col1:
@@ -129,9 +111,6 @@ with col2:
         st.write("No critical path detected")
 
 
-# ==============================
-# INSIGHTS + RECOMMENDATIONS
-# ==============================
 col1, col2 = st.columns(2)
 
 with col1:
