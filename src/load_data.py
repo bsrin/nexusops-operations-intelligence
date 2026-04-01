@@ -17,7 +17,6 @@ def clean_task_name(name):
     if pd.isna(name):
         return name
 
-    # Remove Notion URLs
     name = re.sub(r"\s*\(https://.*?\)", "", str(name))
 
     return name.strip()
@@ -40,13 +39,11 @@ def load_data():
     resources = pd.read_csv("data/resources.csv")
     risks = pd.read_csv("data/risks.csv")
 
-    # --- CLEAN COLUMNS ---
     deployments = clean_columns(deployments)
     tasks = clean_columns(tasks)
     resources = clean_columns(resources)
     risks = clean_columns(risks)
 
-    # --- CLEAN TASK NAMES ---
     if "tasks" in tasks.columns:
         tasks["tasks"] = tasks["tasks"].apply(clean_task_name)
 
@@ -65,14 +62,12 @@ def load_data():
         if col in tasks.columns:
             tasks[col] = pd.to_datetime(tasks[col], errors="coerce")
 
-    # --- NORMALIZE STATUS ---
     if "status" in tasks.columns:
         tasks["status"] = tasks["status"].str.strip().str.lower()
 
     if "status" in deployments.columns:
         deployments["status"] = deployments["status"].str.strip().str.lower()
 
-    # --- RELATION NORMALIZATION ---
     if "deployment" in tasks.columns:
         tasks["deployment_name"] = tasks["deployment"].apply(clean_task_name)
 
